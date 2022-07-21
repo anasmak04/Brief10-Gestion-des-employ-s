@@ -64,3 +64,15 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, sel
 }
 
 
+#logout{
+	background-color:royalblue;
+	color:white;
+	padding:8px 33px;
+	border:none;
+	cursor:pointer;
+}
+
+#logout:hover{
+    transition: all 0.5s ease-in;
+	background-color:blue;
+}
