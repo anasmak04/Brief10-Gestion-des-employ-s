@@ -1,6 +1,11 @@
 @charset "ISO-8859-1";
-	.w3-card-4{
-	height:750px;}
+.w3-card-4{
+	height:750px;
+	}
+.card-delete{
+	height:300px;
+}	
+
 .container {
     padding: 20px;
       width:700px;
@@ -49,6 +54,10 @@ input[type=phone] {
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, select:focus {
   background-color: #ddd;
   outline: none;
+}
+
+.submit{
+	cursor:pointer;
 }
 
 
