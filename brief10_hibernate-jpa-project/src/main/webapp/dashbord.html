@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+function myFunction() {
+  alert("are you sure you want to delete it!");
+}
+</script>
 <style>
 
 .submit{
@@ -71,7 +76,7 @@ margin-top:30px;
 </h2>
 <form class="example" action="" style="margin:auto;max-width:300px">
   <input type="text" placeholder="Search by reference.." name="search2">
-  <button type="submit"><i class="fa fa-search"></i></button>
+  <button  type="submit"><i class="fa fa-search"></i></button>
 </form>
 <button id="logout">logout</button>
   <table class="w3-table-all">
@@ -141,7 +146,10 @@ margin-top:30px;
             
         
       </div>
-<button class="submit">submit</button>      
+      
+<button onclick="myFunction()" class="submit">submit</button> 
+
+     
     </div>
   </div>
 </div>
@@ -237,7 +245,7 @@ margin-top:30px;
             
         
       </div>
-<button class="submit">submit</button>      
+<button onclick="myFunction()" class="submit">submit</button>      
     </div>
   </div>
 </div>
@@ -331,7 +339,7 @@ margin-top:30px;
             
         
       </div>
-<button class="submit">submit</button>      
+<button onclick="myFunction()" class="submit">submit</button>      
     </div>
   </div>
 </div>
