@@ -4,10 +4,22 @@
 <meta charset="ISO-8859-1">
 <title>Login</title>
 <link rel="stylesheet" href="css/dash.css">
+<link rel="stylesheet" href="css/modal.css">
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+	
+.submit{
+text-align: center;  
+margin:0 auto;
+display:block;
+	
+	
+}
+
+
 	
 	form.example input[type=text] {
   padding: 10px;
@@ -47,6 +59,8 @@ form.example::after {
 .w3-table-all{
 margin-top:30px;
 }
+
+
 </style>
 
 </head>
@@ -55,7 +69,7 @@ margin-top:30px;
 			<div class="w3-container">
   <h2>Gestion des employés
 </h2>
-<form class="example" action="/" style="margin:auto;max-width:300px">
+<form class="example" action="" style="margin:auto;max-width:300px">
   <input type="text" placeholder="Search by reference.." name="search2">
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
@@ -85,15 +99,28 @@ margin-top:30px;
       <header class="w3-container w3-teal"> 
         <span onclick="document.getElementById('id01').style.display='none'" 
         class="w3-button w3-display-topright">&times;</span>
-        <h2>Modal Header</h2>
+        <h2>Update your informations</h2>
       </header>
       <div class="w3-container">
-        <p>Some text..</p>
-        <p>Some text..</p>
+               <label for="refernce"><b>refernce</b></label>
+            <input class="text"  type="text" placeholder="refernce" name="refernce" required> 
+            
+         <label for="firstName"><b>firstName</b></label>
+            <input class="text" type="text" placeholder="firstName" name="firstName" required> 
+            
+             <label for="lastName"><b>lastName</b></label>
+            <input class="text" type="text" placeholder="lastName" name="lastName" required> 
+         	
+            <label for="email"><b>email</b></label>
+            <input  type="email" placeholder="email" name="email" required>  
+            
+                        <label for="adresse"><b>adresse</b></label>
+            <input class="text" type="text" placeholder="adresse" name="adresse" required> 
+            
+                        <label for="contact"><b>contact</b></label>
+            <input class="text" type="text" placeholder="contact" name="contact" required> 
       </div>
-      <footer class="w3-container w3-teal">
-        <p>Modal Footer</p>
-      </footer>
+<button class="submit">submit</button>      
     </div>
   </div>
 </div>
