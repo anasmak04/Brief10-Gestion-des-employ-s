@@ -1,7 +1,7 @@
 # brief10-Gestion-des-employ-s
 
 <h1>Java servlet & Thymleaf
- Login, Registration and crud DAO Design Pattern Repository Design Pattern PostregSQL ORM  Hibernat </h1>
+ Login,  and crud DAO Design Pattern Repository Design Pattern PostregSQL ORM  Hibernat </h1>
  <p>This is a Java  project which has user login, information and error notification, crud with hibernate which helps new developers to begin their project without beginning from the scratch.</p>
 
 
