@@ -10,6 +10,8 @@
 <li>Java 1.8.0_66</li>
 <li>SQL</li>
 <li>hibernate</li>
+  <li>servlet</li>
+    <li>thymleaf</li>
 </ul>
 
 
@@ -17,8 +19,7 @@
 
 <ul>
 <li>Java</li>
-  <li>servlet</li>
-    <li>thymleaf</li>
+
   <li>Postgresql</li>
   <li>Eclipse</li>
 </ul>
