@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC  
-          "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
-          "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">  
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
- <session-factory>
- <mapping class="hibernatePack.model.Employee" />
- 
- </session-factory>
+   <session-factory>
+
+      <property name = "hibernate.dialect">
+         org.hibernate.dialect.PostgreSQLDialect
+      </property>
+
+      <property name = "hibernate.connection.driver_class">
+         org.postgresql.Driver
+      </property>
+
+      <!-- Assume test is the database name -->
+
+      <property name = "hibernate.connection.url">jdbc:postgresql://localhost:5432/Brief10</property>
+
+      <property name = "hibernate.connection.username">postgres</property>
+
+      <property name = "hibernate.connection.password">anas5313N</property>
+
+      <property name="hbm2ddl.auto">update</property> <!-- create / create-drop / update -->
+
+        <property name="show_sql">true</property> <!-- Show SQL in console -->
+        <property name="format_sql">true</property> <!-- Show SQL formatted -->
+
+      <!-- List of XML mapping files -->
+      <mapping resource = "Employe.hbm.xml"/>
+
+   </session-factory>
 </hibernate-configuration>
