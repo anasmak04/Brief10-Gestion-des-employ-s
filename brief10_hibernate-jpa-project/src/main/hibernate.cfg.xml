@@ -18,7 +18,7 @@
 
       <property name = "hibernate.connection.username">postgres</property>
 
-      <property name = "hibernate.connection.password">anas5313N</property>
+      <property name = "hibernate.connection.password">20040201Aatman*</property>
 
       <property name="hbm2ddl.auto">update</property> <!-- create / create-drop / update -->
 

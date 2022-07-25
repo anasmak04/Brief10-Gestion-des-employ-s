@@ -1,39 +1,109 @@
 package dao;
 
 import java.util.List;
+import javax.transaction.Transaction;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 
+import hibernate.Hibernate;
 import model.Employee;
 
-public class DaoImpl implements InterfaceDao {
+public abstract class DaoImpl implements InterfaceDao {
 
-	@Override
-	public void InsertEmp(Employee employee) {
-		// TODO Auto-generated method stub
-		
-	}
+	  /* Method to CREATE an employee in the database */
+	   public void InsertEmp(Employee employee){
+	      org.hibernate.Transaction tx = null;
+	      
+	      try (
+	    	 Session session = Hibernate.getSessionFactory().openSession();){
+	         tx = session.beginTransaction();
+	         session.save(employee); 
+	         tx.commit();
+	      } catch (HibernateException e) {
+	         if (tx!=null) {
+	        	 tx.rollback();
+	         }
+	         e.printStackTrace();
+	      	}
+	   }
 
-	@Override
-	public void UpdateEmp(Employee employee) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteEmp(String refernce) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Employee getEmp(String refernce) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Employee> getAllEmp() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	   	
+	   public Employee getEmp(String refernce) {
+		   org.hibernate.Transaction tx = null;
+		   Employee employee = null;
+		   
+		   try(Session session = Hibernate.getSessionFactory().openSession()){
+			   tx = session.beginTransaction();
+			   
+			   employee = session.get(Employee.class, refernce);
+		   
+			   tx.commit();
+		   } catch (HibernateException e) {
+			   if (tx != null) {
+				   tx.rollback();
+			   }
+			   e.printStackTrace();
+		   }
+		   return employee;
+	   }
+	   
+	   /* Method to  READ all the employees */
+	   public List <Employee> getAllEmp( ){
+	      org.hibernate.Transaction tx = null;
+	      List <Employee> listOfEmployee = null;
+	      
+	      try(Session session = Hibernate.getSessionFactory().openSession()){
+	    	  tx = session.beginTransaction();
+	    	  listOfEmployee = session.createQuery("from Employee").getResultList();
+	    	  
+	    	  tx.commit();
+	         
+	      } catch (HibernateException e) {
+	         if (tx!=null) {
+	        	 tx.rollback();
+	         }
+	         e.printStackTrace(); 
+	      }
+	      return listOfEmployee;
+	   }
+	   
+	   /* Method to UPDATE salary for an employee */
+	   public void UpdateEmp(Employee employee){
+	      org.hibernate.Transaction tx = null;
+	      
+	      try (Session session = Hibernate.getSessionFactory().openSession()){
+	    	 tx = session.beginTransaction();
+	    	 
+	    	 session.update(employee);
+	    	 
+	         tx.commit();
+	      } catch (HibernateException e) {
+	         if (tx!=null) {
+	        	 tx.rollback();
+	         }
+	         e.printStackTrace(); 
+	      }
+	   }
+	   
+	   /* Method to DELETE an employee from the records */
+	   public void deleteEmp(String refernce){
+	      org.hibernate.Transaction tx = null;
+	      
+	      try (Session session = Hibernate.getSessionFactory().openSession()){
+	    	  tx = session.beginTransaction();
+	    	  Employee employee = session.get(Employee.class, refernce);
+	    	  if(employee != null) {
+	    		  session.delete(employee);
+	    		  System.out.println("Employee Deleted Successefuly");
+	    	  }
+	    	  
+	    	  tx.commit();
+	    	  
+	      } catch (HibernateException e) {
+	    	  if (tx != null) {
+	    		  tx.rollback();
+	    	  }
+	    	  e.printStackTrace();
+	      } 
+	   }
+	
 }
