@@ -74,6 +74,7 @@ public class ServletEmployee extends HttpServlet {
 			request.setAttribute("getAllEmp", getAllEmp);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 			dispatcher.forward(request, response);
+			response.getWriter().write("works");
 	}
 
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {

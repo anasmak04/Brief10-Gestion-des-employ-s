@@ -20,9 +20,9 @@ public class Hibernate {
 	    // Hibernate settings equivalent to hibernate.cfg.xml's properties
 	    Properties settings = new Properties();
 	    settings.put(Environment.DRIVER, "org.postgresql.Driver");
-	    settings.put(Environment.URL, "jdbc:mysql://localhost:3306/Brief10");
+	    settings.put(Environment.URL, "jdbc:mysql://localhost:5432/brief10");
 	    settings.put(Environment.USER, "postgres");
-	    settings.put(Environment.PASS, "anas5313N");
+	    settings.put(Environment.PASS, "20040201Aatman*");
 	    settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL95Dialect\r\n"
 	    		+ "");
 
