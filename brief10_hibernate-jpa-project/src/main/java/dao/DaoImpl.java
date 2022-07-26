@@ -1,18 +1,18 @@
 package dao;
 
 import java.util.List;
-import javax.transaction.Transaction;
+import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import hibernate.Hibernate;
 import model.Employee;
 
-public abstract class DaoImpl implements InterfaceDao {
+public class DaoImpl implements InterfaceDao {
 
 	  /* Method to CREATE an employee in the database */
 	   public void InsertEmp(Employee employee){
-	      org.hibernate.Transaction tx = null;
+	      Transaction tx = null;
 	      
 	      try (
 	    	 Session session = Hibernate.getSessionFactory().openSession();){
@@ -28,7 +28,7 @@ public abstract class DaoImpl implements InterfaceDao {
 	   }
 
 	   public Employee getEmp(String refernce) {
-		   org.hibernate.Transaction tx = null;
+		   Transaction tx = null;
 		   Employee employee = null;
 		   
 		   try(Session session = Hibernate.getSessionFactory().openSession()){
@@ -47,8 +47,8 @@ public abstract class DaoImpl implements InterfaceDao {
 	   }
 	   
 	   /* Method to  READ all the employees */
-	   public List <Employee> getAllEmp( ){
-	      org.hibernate.Transaction tx = null;
+	   public List <Employee> getAllEmp(){
+	      Transaction tx = null;
 	      List <Employee> listOfEmployee = null;
 	      
 	      try(Session session = Hibernate.getSessionFactory().openSession()){
@@ -68,7 +68,7 @@ public abstract class DaoImpl implements InterfaceDao {
 	   
 	   /* Method to UPDATE salary for an employee */
 	   public void UpdateEmp(Employee employee){
-	      org.hibernate.Transaction tx = null;
+	      Transaction tx = null;
 	      
 	      try (Session session = Hibernate.getSessionFactory().openSession()){
 	    	 tx = session.beginTransaction();
@@ -86,7 +86,7 @@ public abstract class DaoImpl implements InterfaceDao {
 	   
 	   /* Method to DELETE an employee from the records */
 	   public void deleteEmp(String refernce){
-	      org.hibernate.Transaction tx = null;
+	      Transaction tx = null;
 	      
 	      try (Session session = Hibernate.getSessionFactory().openSession()){
 	    	  tx = session.beginTransaction();
